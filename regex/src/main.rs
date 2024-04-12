@@ -33,7 +33,7 @@ fn main() {
         .expect("Couldn't read from stdin");
     regex = regex.trim().to_string();
 
-    let processor = RegexProcessor::new(regex);
+    let mut processor = RegexProcessor::new(regex);
     let lambda_nfa = processor.generate();
 
     dbg!(lambda_nfa);
